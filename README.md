@@ -1,62 +1,65 @@
-# Human Ontic Kernel (HOK) Specification
+# Human Ontic Kernel (HOK) v5.1
 
-![Status](https://img.shields.io/badge/Status-RFC%20Draft-orange)
-![Version](https://img.shields.io/badge/Spec_Version-v5.1-blue)
-![Focus](https://img.shields.io/badge/Focus-Complex_Systems_%7C_Governance-green)
+### 🚀 Project Positioning: A Physics-Isomorphic Mediator Layer for AI Logic
 
-> **"What if reality isn't just a dataset, but a computable operating system governed by strict audit logs?"**
-
-## 📂 Abstract
-
-**HOK (Human Ontic Kernel)** is a formal specification for modeling constrained adaptive systems. It treats physical, social, and cognitive dynamics not as separate magisteria, but as different "Bindings" running on a shared computational substrate: the **Dynamic Causal Graph ($G_F$)**.
-
-This project is **NOT** a claim of new physics. It is a proposal for a **unifying computational kernel**—a set of primitives, operators, and governance protocols—designed to model systems driven by boundary feasibility and tension minimization.
-
-It is particularly relevant for:
-* **AGI Safety & Governance:** Implementing "Anti-Goodhart" controls and "Oracle Separation" at the kernel level.
-* **Complex Systems Simulation:** Unifying thermodynamic and sociological metrics under a single cost function ($T$).
-* **Structural Realism:** Exploring the "OS layer" beneath standard physical theories.
+HOK is not just a technical specification; it is an ontological exploration of how biological, social, and physical systems interact. It provides a structured "tagging language" to constrain LLM (Large Language Model) reasoning, transforming vague social descriptions into rigorous, computable state transitions.
 
 ---
 
-## ⚠️ Status & Disclaimer
+## 🧠 The Story Behind HOK: From the Womb to the World
 
-* **Current Stage:** **L1/L2 (Conceptual & Structural)**.
-* **Open Issues (L3):** We have *mapped* standard physics to kernel primitives (see `Rosetta_Stone.pdf`), but we have **not yet derived** numerical values for constants like $G$ or $\hbar$ from the graph topology. This is an active roadmap item.
-* **Nature:** This is an **RFC (Request For Comments)**. We invite feedback on the architecture, audit schemas, and binding protocols.
+The genesis of HOK lies in a fundamental question: **What is the first "Container" of a human individual, and what happens at the first moment of existence?**
+
+1.  **The Birth of the "I"**: The moment an individual consciousness establishes itself is the moment it begins to extract energy from another (the mother). Whether it is the service of delivery, labor, emotional energy, or financial support, these are all "costs" paid by others.
+2.  **Initial Debt (S1-PHY-001)**: This original imbalance is what I define as "Initial Debt." It is not a moral claim but a structural necessity—without this initial tension/imbalance, there is no drive for flow or growth within the system.
+3.  **Scale Invariance**: I observed that this logic repeats itself from interpersonal relationships to corporate competition and geopolitical dynamics. Every interaction involves a transfer of "debt" and "tension."
 
 ---
 
-## 🏗️ Architecture
+## 🛠️ The Four Operations of Interaction
 
-The Kernel is defined by a minimal set of typed interfaces. It guarantees structural legality, leaving domain semantics to specific "Bindings."
+In the **HOK v5.1 Specification**, all complex social and physical interactions are deconstructed into four fundamental isomorphic operators:
 
-### 1. Primitives
-The atoms of the HOK universe:
-* **`Field (F)`**: The context space and rule set.
-* **`Container (C)`**: A bounded subsystem with internal state. Think *Markov Blankets* with an API.
-* **`Boundary (B)`**: The feasibility predicate $B(s) \to \{0,1\}$.
-* **`Tension (T)`**: The universal cost function. Whether it's "Potential Energy" in physics or "Anxiety" in psychology, the Kernel treats it as a scalar to be minimized.
+* **Expansion (擴張)**: The growth of a container’s state space or influence.
+* **Deprivation (剝奪)**: The transfer of load/energy and the generation of potential (defined as neutral).
+* **Linkage (連結)**: The establishment of tension-conducting paths between subjects.
+* **Settlement (交割)**: The final confirmation and state update of an interaction.
 
-### 2. The Kernel Cycle
-Instead of continuous time, HOK uses a discrete update loop with strict governance checks:
+When these operations generate **Vectors**, they naturally produce **Friction (摩擦), Resistance (阻力), and Temperature (溫度).**
 
-```python
-def Kernel_Gate(state_t, proposed_update):
-    # 1. Project onto Feasible Set (Geometric Constraint)
-    candidate = Project(proposed_update, Boundary_t)
-    if candidate is None:
-        return REJECT("Projection Failure")
+---
 
-    # 2. Check Governance Constraints (Safety Layer)
-    if Anti_Goodhart_Check(candidate) == FAIL:
-        return REJECT("Oracle Manipulation Detected")
-    
-    # 3. Log the Decision (Immutable Audit)
-    Audit_Log.append({
-        "action": "ACCEPT",
-        "delta_tension": T(candidate) - T(state_t),
-        "witness": Oracle_Signature
-    })
-    
-    return candidate
+## ⚖️ Dual-Track System: Mental & Material
+
+HOK implements a **Dual-Track Architecture** to solve the problem of "Internal Friction" (Burnout/Conflict) in AI modeling:
+* **The Mental Track (精神雙軌)**: Processes subjective logic, intentions, and "Expansion/Deprivation."
+* **The Material Track (物質雙軌)**: Processes objective resource constraints and "Settlement."
+* **Friction**: Emerges when the mental expansion outpaced the material ability to settle.
+
+---
+
+## 🔬 Validation: Physics as a Unit Test
+
+HOK does not claim to discover new physics. Instead, it uses physics as a **Validator**. 
+In the **NET-1 (Newton Emergence Test)**, we used the HOK kernel to simulate gravity. By treating social "tension" as physical "potential," the Inverse-Square Law ($1/r^2$) emerged with a fitness of **$R^2 \ge 0.995$**.
+
+*Special Note:* At the suggestion of LLM collaborators during the build process, elements of **Friston’s Free Energy Principle** were integrated to optimize state-transition predictions.
+
+---
+
+## 📂 Documentation Suite (138pp)
+
+* **`HOK_v5_1_Specification.pdf` (40pp)**: Core kernel, operators, and ethical governance.
+* **`HOK_Physics_Appendix.pdf` (80pp)**: Detailed derivations and NET-1 simulation data.
+* **`HOK_Physics_Kernel_Rosetta_Stone.pdf` (18pp)**: Mapping dictionary between physical tags and social states.
+
+---
+
+## 💬 Invitation to Experiment
+
+I am just an independent researcher who spent months cross-referencing these patterns with AI to eliminate "hallucinations." I invite you to download this specification, feed it into your LLM (GPT-4/Claude/Gemini), and ask it to **"Analyze social events or interpersonal dynamics strictly following the HOK framework."** You may find that the world becomes startlingly clear when viewed through the lens of structural tension.
+
+---
+**Author:** YKS (Independent Architect)  
+**Status:** RFC-style Draft (Build: 2025.12.13)  
+**License:** MIT / Open Specification
