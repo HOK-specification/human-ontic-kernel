@@ -5,94 +5,131 @@
 **Author:** YKS (Independent Researcher)  
 **License:** MIT  
 
----
-
 ## Overview
 
-The **Human Ontic Kernel (HOK)** is a domain-neutral, computable interface calculus for modeling constrained adaptive systems.  
-It defines a minimal set of **primitives** and **operators** for state transitions governed by:
+**Human Ontic Kernel (HOK)** is a domain-neutral, computable specification for describing **constrained adaptive systems** as **typed state transitions** under:
 
-- **Boundary feasibility**
-- **Tension minimization**
-- **Audit-ready governance**
+- **Boundary feasibility** (what states are allowed)
+- **Tension minimization** (what pressures drive change)
+- **Audit-ready governance** (what is accepted/rejected, and why)
 
-Bindings map Kernel objects into specific domains (physics, psychology, sociology, AI safety).  
-Bindings are **hypotheses**, not Kernel truths, and must declare measurement proxies and failure semantics.
+HOK is designed as a **mediator layer** that can be instantiated in different domains via **Bindings** (physics, psychology, sociology, AI safety, etc.).  
+**Bindings are hypotheses, not kernel truths.** A Binding MUST declare its **measurement proxies** and **failure semantics**.
 
 ---
 
 ## What this is (and is not)
 
-- ✅ **Is:**  
-  - A computable kernel specification  
-  - Typed interfaces for state transitions  
-  - Governance hooks (audit logs, consent tokens, oracle separation)  
+### ✅ This is
+- A **kernel specification** (primitives + operators + invariants)
+- A **typed interface calculus** for state transitions and coupling between systems
+- A **governance/audit layer** (logs, consent tokens, oracle separation, version control)
 
-- ❌ **Is not:**  
-  - Metaphysics or moral claims  
-  - A replacement for domain-specific theories  
-  - A claim of new physics  
+### ❌ This is not
+- Metaphysics, moral claims, or normative statements about human value
+- A replacement for domain-specific theories
+- A claim of new physics
+
+---
+
+## Core model (Kernel)
+
+### Primitives (normative)
+- **Field**: contextual environment / interaction substrate  
+- **Container**: subsystem / agent / object holding state  
+- **Boundary**: feasibility predicate and constraints on state/interaction  
+- **Vector**: directed tendency / gradient / intention-like drive  
+- **Tension**: pressure signal driving transitions (must be proxied to measurements)
+
+### Operators (normative)
+- **O1 Projection**: map a candidate state to the nearest feasible state (or fail)
+- **O2 Feasibility Test**: boundary membership predicate
+- **O3 Link**: construct/update coupling records between containers
+- **O4 Exchange**: resource/info/constraint transfer across links
+- **O5 Update Gate**: accept/reject a proposed transition (audit-ready)
 
 ---
 
 ## Documents
 
-- `HOK_v5_1_Specification.pdf` — Core kernel, operators, governance (Normative)  
-- `HOK_Physics_Appendix.pdf` — Domain mapping and non-normative demos (L1/L2; roadmap for L3)  
-- `HOK_Physics_Kernel_Rosetta_Stone.pdf` — Dictionary mapping kernel terms to physics concepts (Informative)  
+- **`HOK_v5_1_Specification.pdf`**  
+  Core kernel: primitives, operators, governance, conformance rules (**Normative**).
+  Appendix A contains domain bindings, including **A.4 (NET-1)**.
+
+- **`HOK_Physics_Kernel_Rosetta_Stone.pdf`**  
+  Mapping dictionary from kernel terms/operators to physics-facing language (**Informative**).
+  Intended to reduce ambiguity and make “sounds-like” mappings auditable.
+
+- **`HOK_Physics_Appendix.pdf`**  
+  Scenario-driven templates, binding examples, and test scaffolds (**Supplementary / Informative**).
+  Useful for reviewers who want concrete instantiation patterns.
 
 ---
 
-## Quick Start
+## Quick start
 
-1. Read **Status and Scope** + **Terminology** in the specification.  
-2. Draft a **Binding Card** for your domain (ID, version, scope, proxies, failure policies).  
-3. Implement the **measurement operator (M)** with declared HARD/SOFT failure semantics.  
-4. Use the **Update Gate** to enforce legality:  
-   - Projection → Boundary → Governance → Accept/Reject  
-5. Enable **audit logging** (decision tag, boundary version/hash, failure symbol L, ΔDoFmin, optional ΔT/ΔHK).  
-
----
-
-## Validation and Demos (Non-Normative)
-
-### NET‑1: Newton Emergence Test  
-*(see HOK_v5_1_Specification.pdf, Appendix A.4)*
-
-- **Purpose:** Demonstrate how HOK Kernel can reproduce Newtonian inverse-square behavior in a toy lattice.  
-- **Setup:**  
-  - Containers = lattice nodes (objects)  
-  - Boundaries = lattice constraints  
-  - Tension = distance-based potential proxy  
-- **Result:**  
-  - Emergent interaction approximates **inverse-square law** (Newtonian gravity form).  
-  - Fit metrics (e.g., R²) are documented in Appendix A.4 of the specification.  
-- **Status:** Informative demo only. Not a physics claim.  
-
-Other demos include Rosetta mappings (dictionary entries linking kernel terms to familiar physical motifs).
+1. Read **Status & Scope** and **Terminology** in `HOK_v5_1_Specification.pdf`.
+2. Draft a **Binding Card** for your domain:
+   - Binding ID / version / scope
+   - Declared proxies (what you measure)
+   - Bounds/normalization
+   - Failure behavior (HARD/SOFT; what happens when measurement fails)
+3. Implement the **Measurement Operator** `M` for your proxies.
+4. Run the standard transition loop:
+   - **Projection → Boundary → Governance (Update Gate) → Accept/Reject**
+5. Emit audit artifacts for each decision:
+   - decision tag + boundary version/hash
+   - failure symbol (if any)
+   - minimum DoF delta / optional tension deltas
 
 ---
 
-## Governance and Safety
+## Validation and demos (informative)
 
-- **Oracle separation:** Agent cannot modify measurement/calibration parameters.  
-- **Consent Tokens:** Scoped exceptions, auditable and signed.  
-- **Anti-Goodhart controls:** Shadow signals, drift/version control.  
-- **ARC conformance tests:** Minimum audit-ready suite (T0–T11).  
+### NET-1: Newton Emergence Test
+Defined in **`HOK_v5_1_Specification.pdf`, Appendix A.4**.
+
+- **Purpose:** illustrative sanity-check that a toy lattice instantiation can reproduce inverse-square-like behavior under kernel workflow  
+- **Status:** informative demo only (not a physics claim)
+
+---
+
+## Governance and safety (kernel hooks)
+
+- **Oracle separation:** agents cannot modify measurement/calibration parameters
+- **Consent Tokens:** scoped exceptions that are explicit, auditable, and signed
+- **Anti-Goodhart controls:** shadow signals + drift/version control
+- **Conformance tests:** minimum audit-ready suite for gate behavior and artifacts
+
+---
+
+## Using HOK with LLMs (recommended workflow)
+
+If you want fast stress-tests without reading everything:
+1. Feed the PDFs to your model **as constraints/spec**.
+2. Ask it to perform a small, auditable task and **cite pages/sections**.
+
+Example tasks:
+- **Rosetta sanity-check:** pick one strongest and one weakest mapping (with page refs)
+- **NET-1 extraction:** output a minimal reproducible plan (inputs/params/steps/pass-fail)
+- **Event rewrite:** structure a public event using kernel primitives + explicit assumptions/unknowns
+
+**Please require citations and an assumptions/unknowns list** to prevent “confident vibe output.”
 
 ---
 
 ## Contributing
 
-- **Issues:** Propose clarifications or Binding Cards; attach measurement context and failure behavior.  
-- **PRs:** Include tests for Gate decisions and audit artifacts.  
-- **Non-normative demos:** Place under `/examples` with “Informative” flags and reproducibility notes.  
-- Keep README technical and RFC-style; narrative or philosophical notes belong in `/notes`.  
+- **Issues:** propose clarifications or Binding Cards; include measurement context + failure behavior
+- **PRs:** include tests for gate decisions and audit artifacts
+- **Informative demos:** place under `/examples` with reproducibility notes and clear “Informative” labeling
+- Keep README **technical and RFC-style**. Narrative notes belong in `/notes`.
 
 ---
 
 ## Citation
 
-If you reuse the spec or Binding templates, please cite:  
-**“Human Ontic Kernel (HOK) v5.1, RFC-style draft”**  
-and link to this repository.  
+If you reuse the spec or Binding templates, please cite:
+
+> “Human Ontic Kernel (HOK) v5.1, RFC-style draft”  
+> and link to this repository.
