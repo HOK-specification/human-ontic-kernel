@@ -1,65 +1,98 @@
 # Human Ontic Kernel (HOK) v5.1
 
-### 🚀 Project Positioning: A Physics-Isomorphic Mediator Layer for AI Logic
-
-HOK is not just a technical specification; it is an ontological exploration of how biological, social, and physical systems interact. It provides a structured "tagging language" to constrain LLM (Large Language Model) reasoning, transforming vague social descriptions into rigorous, computable state transitions.
-
----
-
-## 🧠 The Story Behind HOK: From the Womb to the World
-
-The genesis of HOK lies in a fundamental question: **What is the first "Container" of a human individual, and what happens at the first moment of existence?**
-
-1.  **The Birth of the "I"**: The moment an individual consciousness establishes itself is the moment it begins to extract energy from another (the mother). Whether it is the service of delivery, labor, emotional energy, or financial support, these are all "costs" paid by others.
-2.  **Initial Debt (S1-PHY-001)**: This original imbalance is what I define as "Initial Debt." It is not a moral claim but a structural necessity—without this initial tension/imbalance, there is no drive for flow or growth within the system.
-3.  **Scale Invariance**: I observed that this logic repeats itself from interpersonal relationships to corporate competition and geopolitical dynamics. Every interaction involves a transfer of "debt" and "tension."
+**Status:** Draft (RFC-style)  
+**Version:** v5.1  
+**Author:** YKS (Independent Researcher)  
+**License:** MIT  
 
 ---
 
-## 🛠️ The Four Operations of Interaction
+## Overview
 
-In the **HOK v5.1 Specification**, all complex social and physical interactions are deconstructed into four fundamental isomorphic operators:
+The **Human Ontic Kernel (HOK)** is a domain-neutral, computable interface calculus for modeling constrained adaptive systems.  
+It defines a minimal set of **primitives** and **operators** for state transitions governed by:
 
-* **Expansion (擴張)**: The growth of a container’s state space or influence.
-* **Deprivation (剝奪)**: The transfer of load/energy and the generation of potential (defined as neutral).
-* **Linkage (連結)**: The establishment of tension-conducting paths between subjects.
-* **Settlement (交割)**: The final confirmation and state update of an interaction.
+- **Boundary feasibility**
+- **Tension minimization**
+- **Audit-ready governance**
 
-When these operations generate **Vectors**, they naturally produce **Friction (摩擦), Resistance (阻力), and Temperature (溫度).**
-
----
-
-## ⚖️ Dual-Track System: Mental & Material
-
-HOK implements a **Dual-Track Architecture** to solve the problem of "Internal Friction" (Burnout/Conflict) in AI modeling:
-* **The Mental Track (精神雙軌)**: Processes subjective logic, intentions, and "Expansion/Deprivation."
-* **The Material Track (物質雙軌)**: Processes objective resource constraints and "Settlement."
-* **Friction**: Emerges when the mental expansion outpaced the material ability to settle.
+Bindings map Kernel objects into specific domains (physics, psychology, sociology, AI safety).  
+Bindings are **hypotheses**, not Kernel truths, and must declare measurement proxies and failure semantics.
 
 ---
 
-## 🔬 Validation: Physics as a Unit Test
+## What this is (and is not)
 
-HOK does not claim to discover new physics. Instead, it uses physics as a **Validator**. 
-In the **NET-1 (Newton Emergence Test)**, we used the HOK kernel to simulate gravity. By treating social "tension" as physical "potential," the Inverse-Square Law ($1/r^2$) emerged with a fitness of **$R^2 \ge 0.995$**.
+- ✅ **Is:**  
+  - A computable kernel specification  
+  - Typed interfaces for state transitions  
+  - Governance hooks (audit logs, consent tokens, oracle separation)  
 
-*Special Note:* At the suggestion of LLM collaborators during the build process, elements of **Friston’s Free Energy Principle** were integrated to optimize state-transition predictions.
-
----
-
-## 📂 Documentation Suite (138pp)
-
-* **`HOK_v5_1_Specification.pdf` (40pp)**: Core kernel, operators, and ethical governance.
-* **`HOK_Physics_Appendix.pdf` (80pp)**: Detailed derivations and NET-1 simulation data.
-* **`HOK_Physics_Kernel_Rosetta_Stone.pdf` (18pp)**: Mapping dictionary between physical tags and social states.
+- ❌ **Is not:**  
+  - Metaphysics or moral claims  
+  - A replacement for domain-specific theories  
+  - A claim of new physics  
 
 ---
 
-## 💬 Invitation to Experiment
+## Documents
 
-I am just an independent researcher who spent months cross-referencing these patterns with AI to eliminate "hallucinations." I invite you to download this specification, feed it into your LLM (GPT-4/Claude/Gemini), and ask it to **"Analyze social events or interpersonal dynamics strictly following the HOK framework."** You may find that the world becomes startlingly clear when viewed through the lens of structural tension.
+- `HOK_v5_1_Specification.pdf` — Core kernel, operators, governance (Normative)  
+- `HOK_Physics_Appendix.pdf` — Domain mapping and non-normative demos (L1/L2; roadmap for L3)  
+- `HOK_Physics_Kernel_Rosetta_Stone.pdf` — Dictionary mapping kernel terms to physics concepts (Informative)  
 
 ---
-**Author:** YKS (Independent Architect)  
-**Status:** RFC-style Draft (Build: 2025.12.13)  
-**License:** MIT / Open Specification
+
+## Quick Start
+
+1. Read **Status and Scope** + **Terminology** in the specification.  
+2. Draft a **Binding Card** for your domain (ID, version, scope, proxies, failure policies).  
+3. Implement the **measurement operator (M)** with declared HARD/SOFT failure semantics.  
+4. Use the **Update Gate** to enforce legality:  
+   - Projection → Boundary → Governance → Accept/Reject  
+5. Enable **audit logging** (decision tag, boundary version/hash, failure symbol L, ΔDoFmin, optional ΔT/ΔHK).  
+
+---
+
+## Validation and Demos (Non-Normative)
+
+### NET‑1: Newton Emergence Test  
+*(see HOK_v5_1_Specification.pdf, Appendix A.4)*
+
+- **Purpose:** Demonstrate how HOK Kernel can reproduce Newtonian inverse-square behavior in a toy lattice.  
+- **Setup:**  
+  - Containers = lattice nodes (objects)  
+  - Boundaries = lattice constraints  
+  - Tension = distance-based potential proxy  
+- **Result:**  
+  - Emergent interaction approximates **inverse-square law** (Newtonian gravity form).  
+  - Fit metrics (e.g., R²) are documented in Appendix A.4 of the specification.  
+- **Status:** Informative demo only. Not a physics claim.  
+
+Other demos include Rosetta mappings (dictionary entries linking kernel terms to familiar physical motifs).
+
+---
+
+## Governance and Safety
+
+- **Oracle separation:** Agent cannot modify measurement/calibration parameters.  
+- **Consent Tokens:** Scoped exceptions, auditable and signed.  
+- **Anti-Goodhart controls:** Shadow signals, drift/version control.  
+- **ARC conformance tests:** Minimum audit-ready suite (T0–T11).  
+
+---
+
+## Contributing
+
+- **Issues:** Propose clarifications or Binding Cards; attach measurement context and failure behavior.  
+- **PRs:** Include tests for Gate decisions and audit artifacts.  
+- **Non-normative demos:** Place under `/examples` with “Informative” flags and reproducibility notes.  
+- Keep README technical and RFC-style; narrative or philosophical notes belong in `/notes`.  
+
+---
+
+## Citation
+
+If you reuse the spec or Binding templates, please cite:  
+**“Human Ontic Kernel (HOK) v5.1, RFC-style draft”**  
+and link to this repository.  
